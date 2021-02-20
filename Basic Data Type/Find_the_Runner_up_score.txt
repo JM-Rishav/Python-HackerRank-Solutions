@@ -1,0 +1,18 @@
+Find the Runner-up score !!
+
+
+# Creating new list and removing the maximum of it, then printing the max
+
+n = int(input())
+lists = list(map(int,input().strip().split()))[:n]
+new_list = set(lists)
+new_list.remove(max(lists))
+print(max[new_list])
+
+
+# After sorting, print the second largest
+
+n = int(input())
+lists = list(map(int,input().strip().split()))[:n]
+print(sorted(lists)[-2])
+print(sorted(set(lists))[-2])
