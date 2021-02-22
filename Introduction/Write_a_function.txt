@@ -1,0 +1,12 @@
+Write a function
+
+
+def is_leap(n):
+    if year%4 == 0 and year%400 == 0:
+        return True
+    if year%100 != 0:
+        return False
+
+
+year = int(input())
+print(is_leap(year))
