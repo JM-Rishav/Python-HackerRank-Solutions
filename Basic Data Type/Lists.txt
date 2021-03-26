@@ -1,0 +1,57 @@
+T = int(raw_input().strip())
+
+L = []
+for t in range(T):
+    args = raw_input().strip().split(" ")
+    if args[0] == "append":
+        L.append(int(args[1]))
+    elif args[0] == "insert":
+        L.insert(int(args[1]), int(args[2]))
+    elif args[0] == "remove":
+        L.remove(int(args[1]))
+    elif args[0] == "pop":
+        L.pop()
+    elif args[0] == "sort":
+        L.sort()
+    elif args[0] == "reverse":
+        L.reverse()
+    elif args[0] == "print":
+        print L
+
+
+* raw_input().strip() saves you many headaches trying to figure out non-printable characters.
+
+
+	(OR)
+
+T = int(raw_input().strip())
+L = []
+for t in range(T):
+    args = raw_input().strip().split(" ")
+    if args[0] == "print":
+        print L
+    elif len(args) == 3:
+        getattr(L, args[0])(int(args[1]), int(args[2]))
+    elif len(args) == 2:
+        getattr(L, args[0])(int(args[1]))
+    else:
+        getattr(L, args[0])()
+
+
+* considering the user won't enter    invalid input. How to replicate the ability to call a function via a name stored in a variable, in python it is getattr(Object, Fuction)(Vars)
+
+
+
+# better way
+
+n = input()
+l = []
+for _ in range(n):
+    s = raw_input().split()
+    cmd = s[0]
+    args = s[1:]
+    if cmd !="print":
+        cmd += "("+ ",".join(args) +")"
+        eval("l."+cmd)
+    else:
+        print l
