@@ -1,0 +1,15 @@
+#1
+n = int(input())
+ints = input().split()
+t = tuple(int(i) for i in ints)
+print(hash(t))
+
+numbers = raw_input().strip().split()
+for i in range(len(numbers)):
+    numbers[i] = int(numbers[i])
+T = tuple(numbers)
+print hash(T)
+
+#2
+raw_input()
+print hash(tuple(map(int, raw_input().strip().split(" "))))
