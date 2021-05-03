@@ -1,0 +1,23 @@
+# Text Wrap
+
+
+1. def wrap(string, max_width):
+    return "\n".join([string[i:i+max_width] for i in range(0, len(string), max_width)])
+
+2. Best according to me!!
+   
+   def wrap(string, max_width):
+    return "\n".join(textwrap.wrap(string, max_width))
+
+3. import textwrap
+   
+   def wrap(string, max_width):
+     wrapper = textwrap.TextWrapper(width=max_width) 
+     dedented_text = textwrap.dedent(text=string) 
+     result = wrapper.fill(text=dedented_text) 
+     return result
+        
+   if __name__ == '__main__':
+     string, max_width = input(), int(input())
+     result = wrap(string, max_width)
+     print(result)
