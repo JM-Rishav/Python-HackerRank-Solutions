@@ -1,0 +1,41 @@
+# The Minion Game
+# very good problem !!
+
+def minion_game(string):
+    vowels = 'AEIOU'
+    Stuart_score, Kevin_score = 0, 0
+    length = len(string)
+    for start_idx in range(length):
+        score = length - start_idx
+        if string[start_idx] in vowels:
+            Kevin_score += score
+        else:
+            Stuart_score += score
+    if Stuart_score == Kevin_score:
+        print('Draw')
+    if Stuart_score > Kevin_score:
+        print('Stuart {}'.format(Stuart_score))
+    if Stuart_score < Kevin_score:
+        print('Kevin {}'.format(Kevin_score))
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+
+
+explanation:-
+
+Consider the example given in hacker rank itself: string = 'BANANA'
+len(string) = 6
+so,
+for start_idx in range(length):
+score = length - start_idx
+if string[start_idx] in vowels:
+Kevin_score += score
+else:
+Stuart_score += score
+When start_idx = 0
+score = len(string) - start_idx which means score = 6-0, implies the we can make total of 6 words with the starting letter "B" such as "B", "BA", "BAN", "BANA", "BANAN" and "BANANA" . The score value will be moved to Stuart_SCORE.
+
+when start_idx = 1
+score = len(string) - start_idx which means score = 6-1, implies the we can make total of 5 words with the starting letter "A" such as "A", "AN", "ANA", "ANAN" and "ANANA" . here ieh score will be moved to KEVIN_SCORE
