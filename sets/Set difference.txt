@@ -1,0 +1,50 @@
+# Set Difference (.difference())
+
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n1 = int(input())
+set_1 = set(map(int,input().split()))
+n2 = int(input())
+set_2 = set(map(int,input().split()))
+print(len(set_1-set_2))
+
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+l1 = set(input().split())
+m = int(input())
+l2 = set(input().split())
+print(len(l1.difference(l2)))
+
+# Enter your code here.
+e, f = [set(input().split()) for i in range(4)][1::2]
+print(len(e.difference(f)))
+
+Explaination
+Think of the whole input:
+
+n1 = input()
+e = set(input().split())
+n2 = input()
+f = set(input().split())
+
+Next you can write it as:
+
+n1, e, n2 f = [set(input().split()) for i in range(4)]
+
+And as we actually don't need n1 and n2, you start from index 1 of the list (to skip n1) and you use step 2 (to skip n2) when slicing the list, so you only get indeces 1 and 3 (e and f), ignoring indeces 0 and 2 (n1 and n2):
+
+e, f = [set(input().split() for i in range(4)][1::2]
+
+# Enter your code here
+_,a,_,b = eval("set(input().split()),"*4);print(len(a-b))
+
+OR
+
+_,a,_,b=eval("{*input().split()},"*4);print(len(a-b))
+
+
+
+
+
+
