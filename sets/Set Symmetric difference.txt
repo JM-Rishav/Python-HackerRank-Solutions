@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+_,a,_,b = [set(input().split()) for _ in range(4)][1::2]
+print('\n'.join(sorted(a^b, key=int)))
+
+
+explanation:
+
+Taking 2 variable a and b with set(), input() and .split() to split the entries. using for loop with range of 4 and using slicing to skip the 2 entries when taken for entries just to show how much of entries to be taken.
+
+then print with join operation first and then sorting.
