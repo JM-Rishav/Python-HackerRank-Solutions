@@ -1,0 +1,23 @@
+# Check Subset
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+T = int(input())
+for i in range(T):
+    A = int(input())
+    setA = set(input().split())
+    B = int(input())
+    setB = set(input().split())
+    print(setA.issubset(setB))
+
+
+# Enter your code here.
+for _ in range(int(input())):
+x, a, z, b = input(), set(input().split()), input(), set(input().split())
+print(a.issubset(b))
+
+
+# Enter your code here.
+for i in range(int(input())):
+    _, a = input(), set(map(int, input().split()))
+    _, b = input(), set(map(int, input().split()))
+    print(a.issubset(b))
