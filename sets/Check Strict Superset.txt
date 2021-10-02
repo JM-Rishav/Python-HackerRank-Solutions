@@ -1,0 +1,76 @@
+# Check Strict Superset
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+a = set(input().split())
+counter , n = 0, int(input())
+for i in range (n):
+        b = set(input().split())
+        if a.issuperset(b) :
+                counter += 1
+print(counter == n)
+
+
+# Enter your code here.
+def isstrictsuperset(a,b):
+    # true if a is a strict superset of b
+    return b.issubset(a) and not(a.issubset(b))
+
+a = set(int(x) for x in input().split(' '))
+n = int(input())
+res = True
+
+for _ in range(n):
+    b = set(int(x) for x in input().split(' '))
+    res &= isstrictsuperset(a,b)
+    
+print(res)
+
+
+# Enter your code here.
+seta = set(map(input().split()))
+print(all([seta.issuperset(set(map(int, input().split()))) for i in range(int(input()))]))
+
+or 
+
+A = set(input().split())
+print(all([A.issuperset(set(input().split())) for _ in range(int(input()))]))
+
+or 
+
+a = set(map(str, input().split(' ')))
+is_strict_superset = []
+for i in range(int(input())):
+     is_strict_superset.append(a.issuperset(set(map(str, input().split(' ')))))
+print(all(is_strict_superset))
+
+or 
+
+# With Explanation
+
+#Variable A contains a set of items.
+#Variable N tells the program how many sets will be created.
+
+A = set(map(int, raw_input().split()))
+N = int(raw_input())
+
+#List in which we will store different sets once we create them.
+
+set_list = []
+
+#We loop N times and variable x creates N sets. We append these sets to a list. Previously created variable set_list now contains a number of different sets.
+
+for i in range(N):
+    x = set(map(int, raw_input().split()))
+    set_list.append(x)
+
+#Default value of the resuls variable is True
+
+result = True
+
+#We iterate over differnet sets in a list.  Result will stay True, unless we find a set to whom A is not a superset.
+
+for i in set_list:
+    if not A.issuperset(i):
+        result = False
+
+print result
