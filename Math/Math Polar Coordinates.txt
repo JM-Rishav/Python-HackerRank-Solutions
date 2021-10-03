@@ -1,0 +1,24 @@
+# Polar Coordinates
+
+# Enter your code here.
+import cmath
+
+r = complex(input().strip())
+
+print(cmath.polar(r)[0])
+print(cmath.polar(r)[1])
+
+Explanation:
+the "cmath.polar(r)" takes in the complex coordinates "r" and converts its it into polar coordinates (it will be a tuple when converted).
+
+the result for "cmath.polar(r)" is (2.23606797749979, 1.1071487177940904)
+
+so, "polar(r)[0]" is the first element "2.23606797749979"
+
+and "polar(r)[1]" is the second element "1.1071487177940904"
+
+
+
+# Enter your code here.
+import cmath
+print(*cmath.polar(complex(input())), sep='\n')
