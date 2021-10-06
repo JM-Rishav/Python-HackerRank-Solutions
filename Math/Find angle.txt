@@ -1,0 +1,20 @@
+# Find angle
+
+# write your code here.
+import math
+AB,BC=int(input()),int(input())
+hype=math.hypot(AB,BC)                      #to calculate hypotenuse
+res=round(math.degrees(math.acos(BC/hype))) #to calculate required angle 
+degree=chr(176)                                #for DEGREE symbol
+print(res,degree, sep='')
+
+# write your code here.
+
+import math AB = int(raw_input()) BC = int(raw_input()) print str(int(round(math.degrees(math.atan2(AB,BC)))))+'°'
+
+
+
+atan2 is a function of atan that accepts 2 inputs
+
+The purpose of using two arguments instead of one is to gather 
+information on the signs of the inputs in order to return the appropriate quadrant of the computed angle, which is not possible for the single-argument arctangent function. It also avoids the problems of division by zero.
