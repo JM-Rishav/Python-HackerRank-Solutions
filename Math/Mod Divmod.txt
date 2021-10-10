@@ -1,0 +1,18 @@
+# Mod Divmod
+
+# write your code here.
+a, b = int(input()),int(input())
+print(a//b,a%b,divmod(a,b),sep='\n')
+
+# Explanation
+
+d = divmod gives you quotient and remainder. so d[0] is quotient, d[1] is remainder. While d in whole is (quotient,remainder) \n will enter a new line after each is printed. Rest is the .format method to print using curly brackets
+
+
+a, b = int(input()), int(input())
+print("{d[0]}\n{d[1]}\n{d}".format(d=divmod(a, b)))
+
+a = divmod(int(input()), int(input()))
+print(*a, a, sep='\n')
+
+print('{0}\n{1}\n({0}, {1})'.format(*divmod(int(input()), int(input()))))
