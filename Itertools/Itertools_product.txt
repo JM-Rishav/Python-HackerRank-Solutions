@@ -1,0 +1,33 @@
+# itertools.product()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from itertools import product
+A = list(map(int, input().split()))
+B = list(map(int, input().split()))
+print(*product(A,B))
+
+explanation:
+About the unpack operator * in *product(a, b), please kindly refer to Expression lists|Python Documentation and it further refers to PEP 448 with clear examples. For dictionary, the unpacker operator is ** instead. Thanks for the great Python.
+
+>>> print(*[1], *[2], 3)
+1 2 3
+>>> dict(**{'x': 1}, y=2, **{'z': 3})
+{'x': 1, 'y': 2, 'z': 3}
+The list function for a and b is excessive. Ihor_L's version is simpler.
+
+
+OR
+
+
+from itertools import product
+a = list(map(int, input().split()))
+b = list(map(int, input().split()))
+print(*list(product(a, b)))
+
+
+or
+
+
+from itertools import product
+print(*product(list(map(int, input().split())), list(map(int, input().split()))))
