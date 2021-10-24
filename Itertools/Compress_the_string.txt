@@ -1,0 +1,18 @@
+# Compress the String
+  (itertools.groupby(iterable, k))
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT    
+from itertools import groupby
+print(*[(len(list(c)), int(k)) for k, c in groupby(input())])
+
+# Explanation
+
+why we use * before?
+
+>>> a = [1, 2, 3, 4, 5]
+>>> print(a)
+[1, 2, 3, 4, 5]
+>>> print(*a)
+1 2 3 4 5
+
+It allows you to pass each element of the list to the print function rather than the list itself.
