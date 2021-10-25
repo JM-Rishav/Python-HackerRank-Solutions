@@ -1,0 +1,18 @@
+# Iterable and Iterators
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from itertools import combinations
+
+N = int(input())
+L = input().split()
+K = int(input())
+
+C = list(combinations(L, K))
+F = filter(lambda c: 'a' in c, C)
+print("{0:.3}".format(len(list(F))/len(C)))
+
+
+Hints:
+The filter() method filters the given sequence with the help of a function that tests each element in the sequence to be true or not. syntax: filter(function, sequence) Parameters: function: function that tests if each element of a sequence true or not.
+
+A Lambda Function in Python programming is an anonymous function or a function having no name. It is a small and restricted function having no more than one line.
