@@ -1,0 +1,61 @@
+# Collection.Counter()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+n = int(input())
+s = Counter(map(int,input().split()))
+x = int(input())
+total = []
+for i in range(x):
+    a,b = map(int,input().split())
+    if s[a] > 0:
+        total.append(b)
+        s.subtract(Counter([a]))
+    else:
+        pass
+
+print (sum(total))
+
+
+# Enter the code here.
+
+import collections
+
+
+number_of_shoes = int(input())
+sizes_in_stock = collections.Counter(map(int, input().split()))
+
+total_revenue = 0
+
+for _ in range(int(input())):
+    size, price = map(int, input().split())
+    if sizes_in_stock[size]:
+        total_revenue += price
+        sizes_in_stock[size] -= 1
+
+print(total_revenue)
+
+
+# Enter your code here.
+
+from collections import Counter
+input() 
+# we don't need to store this input
+
+l = list(map(int, input().split()))
+# conter to dict Object
+
+cnt = Counter(l)
+# Initial price is zero
+
+ans = 0 
+for i in range(int(input())):
+    size , price = [int(i) for i in input().split()]
+    if cnt[size] > 0:
+        ans += price
+        cnt.subtract({size:1}) # subtract by 1
+print(ans)
+
+
+
+####### issues in understanding ######
