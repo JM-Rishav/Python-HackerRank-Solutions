@@ -1,0 +1,30 @@
+# Collections.namedtuple()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+from collections import namedtuple
+n = int(input())
+a = input()
+total = 0
+Student = namedtuple('Student', a)
+for _ in range(n):
+    student = Student(*input().split())
+    total += int(student.MARKS)
+print('{:.2f}'.format(total/n))
+
+
+OR
+
+
+ from collections import namedtuple
+ n, Score = int(input()) , namedtuple('Score',input().split())
+ scores = [Score(*input().split()).MARKS for i in range(n)]
+ print("%.2f"% (sum(map(int,scores))/n))
+
+OR
+
+ from collections import namedtuple
+ n, nt = int(input()), namedtuple('Student', input().split())
+ sl = [nt(*input().split()) for i in range(n)]
+ print('%.2f' % (sum([int(student.MARKS) for student in sl])/n))
+
