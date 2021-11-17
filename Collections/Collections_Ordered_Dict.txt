@@ -1,0 +1,16 @@
+# Collections.OrderedDict()
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import OrderedDict
+N = int(input())
+ordered_dict = OrderedDict()
+for x in range(N):
+    item, space, quantity = input().rpartition(' ')
+    ordered_dict[item] = ordered_dict.get(item, 0) + int(quantity)
+for item, quantity in ordered_dict.items():
+    print(item, quantity)
+
+# Explanation
+Python String | rpartition()
+
+rpartition() function in Python split the given string into three parts. rpartition() start looking for separator from right side, till the separator is found and return a tuple which contains part of the string before separator, argument of the string and the part after the separator.
