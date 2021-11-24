@@ -1,0 +1,140 @@
+# Piling Up!
+
+There is a horizontal row of n cubes. The length of each cube is given. You need to create a new vertical pile of cubes. The new pile should follow these directions: if cube[i] is on top of cube [j]  then sideLength[j] >= sideLength[i].
+
+When stacking the cubes, you can only pick up either the leftmost or the rightmost cube each time. Print Yes if it is possible to stack the cubes. Otherwise, print No.
+
+Example
+
+blocks = [1,2,3,8,7]
+
+Result: No
+
+After choosing the rightmost element, 7, choose the leftmost element, 1. After than, the choices are 2 and 8. These are both larger than the top block of size 1.
+
+blocks = [1,2,3,7,8]
+
+Result: Yes
+
+Choose blocks from right to left in order to successfully stack the blocks.
+
+
+
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+        
+def Solution(lst):
+  pile = float('inf')
+  while lst:
+    num = lst.pop(0) if lst[0] > lst[-1] else lst.pop(-1)
+    if num > pile: return "No"
+    pile = num
+  return "Yes"
+
+def main():
+  t = int(input())
+  for _ in range(t):
+    n = int(input())
+    lst = list(map(int, input().strip().split()))
+    print(Solution(lst))
+
+if __name__ == "__main__":
+  main()
+
+
+OR
+
+
+from collections import deque
+
+for _ in range(int(input())):  
+    _, queue =input(), deque(map(int, input().split()))
+    
+    for cube in reversed(sorted(queue)):
+        if queue[-1] == cube: queue.pop()
+        elif queue[0] == cube: queue.popleft()
+        else:
+            print('No')
+            break
+    else: print('Yes')
+
+
+Explanation :-
+
+He first made the deque from the inputs that part is simple.
+
+After that he sorted the nums in the deque and started reading them in reverse order. Remeber he didn't store the sorted deque anywhere, he is just iterating over it.
+
+So first he pick the biggest size (because he is reading in reverse order ) and check whether the item on the left side or right side of the deque is equal to that, and if such a number exist he poped it from the deque.
+
+Finally if he didn't find such number it means the numbers in the deque are in such a order that you can't make the pile.
+
+
+OR
+
+Hint :- 
+
+-Python code: you can use time(), timeit() or profilers.
+
+time:
+
+from time import time
+
+
+def factorial(n):
+    num = 1
+    while n >= 1:
+        num = num * n
+        n = n - 1
+    return num
+
+t0 = time()
+factorial(10**5)
+print('Elapsed time :', time() - t0 )
+timeit:
+
+import timeit
+
+
+def factorial(n):
+    num = 1
+    while n >= 1:
+        num = num * n
+        n = n - 1
+    return num
+
+t0 = timeit.default_timer()
+factorial(10**5)
+print('Elapsed time :', timeit.default_timer() - t0 )
+cprofile
+
+import cProfile
+
+
+def factorial(n):
+    num = 1
+    while n >= 1:
+        num = num * n
+        n = n - 1
+    return num
+
+cProfile.run('factorial(10**5)')
+https://docs.python.org/3/library/profile.html
+
+There are more ways.
+
+
+OR
+
+
+for t in range(int(input())):
+    input()
+    lst = [int(i) for i in input().split()]
+    min_list = lst.index(min(lst))
+    left = lst[:min_list]
+    right = lst[min_list+1:]
+    if left == sorted(left, reverse=True) and right == sorted(right):
+        print("Yes")
+    else:
+        print("No")
