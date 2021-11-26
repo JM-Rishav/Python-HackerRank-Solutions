@@ -1,0 +1,28 @@
+# Calendar Module
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import calendar
+weekdays = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY']
+def dayofweek(month, day, yr):
+    """dayOfWeek() takes a Gregorian date as (month, day, yr), and finds the day of the week for that date.
+        Source: http://hackerpublicradio.org/eps/hpr1240/doomsday.py"""
+    centuryAnchor = (16 - 2 * (yr // 100 % 4)) % 7 # Find the Doomsday Century Anchor
+    yr = yr % 100 # Calculate Doomsday number for year within century
+    yrs_12 = yr % 12
+    offset = yr // 12 + yrs_12 + yrs_12 // 4 + centuryAnchor
+    monpos = [0, 3, 0, 7, 4, 9, 6, 11, 8, 12, 10, 14, 12][month] # MonthPosLookUp
+    if month < 3 and (yr or centuryAnchor == 2) and not yr % 4: # January and February need leap year adjustment
+        monpos += 1 # 1: If on a 4N year and year is not a Century boundary (i.e., not 0) or Century Anchor is Tuesday
+    return weekdays[(35 + day - monpos + offset) % 7] # Make adjustments from Doomsday setting for the month
+print(dayofweek(*map(int, input().split())))
+
+# Explanation :
+ 
+I disagree, I think the problem is so silly, it encourages us to google for "how to calculate week day", figure out it is called The Doomsday Algorithm, from a British mathematician, John Conway, do some more googling, then find some code and optimize it for this problem, and voilà:
+
+OR
+
+
+import calendar
+n1,n2,n3=map(int,input().split())
+print((calendar.day_name[calendar.weekday(n3,n1,n2)]).upper())
