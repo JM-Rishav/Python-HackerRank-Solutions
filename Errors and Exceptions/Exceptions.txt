@@ -1,0 +1,24 @@
+# Exceptions
+
+# Enter your code here.
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+#T = int(input())
+#for _ in range(int(T)):
+#    try:
+#        a,b = map(int,input().split())
+#        print(a//b)
+#    except ZeroDivisionError as e:
+#        print("Error Code",e)
+#    except ValueError as e:
+#        print("Error Code",e)        
+        
+for test in range(int(input())):
+    try:
+        a,b = map(int,input().split()) 
+        division_result = a // b
+        print(division_result)
+    except ZeroDivisionError as e:
+        print("Error Code:", e)
+    except ValueError as e:
+        print("Error Code:", e)
