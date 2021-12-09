@@ -1,0 +1,39 @@
+# Incorrect Regex
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+import re
+for _ in range(int(input())):
+    ans = True
+    try:
+        reg = re.compile(input())
+    except re.error:
+        ans = False
+    print(ans)
+      
+    
+OR
+
+import re
+
+def isvalidregex(regex):
+    try: re.compile(regex)
+    except re.error: return False
+    return True
+
+for i in range(int(input())):
+    print(isvalidregex(input()))
+    
+OR
+
+import re
+n = input();
+
+for i in range(int(n)):
+    key = input();
+    try:
+        re.compile(key)
+        is_valid = True
+    except re.error:
+        is_valid = False
+    print(is_valid);
