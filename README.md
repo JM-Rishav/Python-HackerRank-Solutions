@@ -11,3 +11,5 @@ HackerRank solutions for Python Badge 5 star gold level badge (Daily Update)
 
 
 ## 4. Sets
+
+## 5. Math
