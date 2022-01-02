@@ -23,3 +23,11 @@ HackerRank solutions for Python Badge 5 star gold level badge (Daily Update)
 
 
 ## 8. Date and Time
+
+
+## 9. Errors and Exceptions
+
+
+
+
+
