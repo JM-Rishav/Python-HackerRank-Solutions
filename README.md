@@ -17,3 +17,6 @@ HackerRank solutions for Python Badge 5 star gold level badge (Daily Update)
 
 
 ## 6. Itertools
+
+
+## 7. Collections
